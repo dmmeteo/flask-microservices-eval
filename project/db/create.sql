@@ -1,4 +1,4 @@
-CREATE DATABASE users_prod;
-CREATE DATABASE users_stage;
-CREATE DATABASE users_dev;
-CREATE DATABASE users_test;
+CREATE DATABASE eval_prod;
+CREATE DATABASE eval_stage;
+CREATE DATABASE eval_dev;
+CREATE DATABASE eval_test;

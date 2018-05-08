@@ -3,4 +3,8 @@ Flask
 Flask-Cors
 Flask-Script
 Flask-Testing
+Flask-SQLAlchemy
+Flask-Migrate
 gunicorn
+requests
+psycopg2
