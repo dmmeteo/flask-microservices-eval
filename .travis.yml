@@ -1,0 +1,23 @@
+language: python
+
+python:
+  - '3.6'
+
+service:
+  - postgresql
+
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - export FLASK_DEBUG=1
+  - export APP_SETTINGS=project.config.TestingConfig
+  - export DATABASE_URL=postgresql://postgres:@localhost/users_dev
+  - export DATABASE_TEST_URL=postgresql://postgres:@localhost/users_test
+  - export SECRET_KEY=wakawakapizdawaka
+  - psql -c 'create database users_dev;' -U postgres
+  - psql -c 'create database users_test;' -U postgres
+  - python manage.py recreate_db
+
+script:
+  - python manage.py test
