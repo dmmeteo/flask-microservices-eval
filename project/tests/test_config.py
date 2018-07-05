@@ -16,7 +16,6 @@ class TestDevelopmentConfig(TestCase):
         return app
 
     def test_app_is_development(self):
-        self.assertTrue(app.config["DEBUG"] is True)
         self.assertFalse(current_app is None)
 
 
@@ -27,7 +26,6 @@ class TestTestingConfig(TestCase):
         return app
 
     def test_app_is_testing(self):
-        self.assertTrue(app.config["DEBUG"])
         self.assertTrue(app.config["TESTING"])
         self.assertFalse(app.config["PRESERVE_CONTEXT_ON_EXCEPTION"])
 
@@ -39,7 +37,6 @@ class TestProductionConfig(TestCase):
         return app
 
     def test_app_is_production(self):
-        self.assertFalse(app.config["DEBUG"])
         self.assertFalse(app.config["TESTING"])
 
 
